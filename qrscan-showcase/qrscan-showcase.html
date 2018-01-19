@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/granite-qrcode-scanner/granite-qrcode-scanner.html">
+
+<dom-module id="qrscan-showcase">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <granite-qrcode-scanner data="{{data}}" active="" continuous=""></granite-qrcode-scanner>
+  </template>
+    
+    Daten: {{data}}
+
+  <script>
+    /**
+     * `qrscan-showcase`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class QrscanShowcase extends Polymer.Element {
+      static get is() { return 'qrscan-showcase'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'qrscan-showcase'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(QrscanShowcase.is, QrscanShowcase);
+  </script>
+</dom-module>

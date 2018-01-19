@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>qrscan-showcase demo</title>
+
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+        <link rel="import" href="bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+        <link rel="import" href="bower_components/iron-demo-helpers/demo-snippet.html">
+        <link rel="import" href="qrscan-showcase/qrscan-showcase.html">
+
+    </head><custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+        </style>
+    </custom-style>
+
+    <style type="text/css">
+
+        .frame-area {
+            display: block;
+            width: 100%;  /* RESPONSIVE WIDTH */
+            /*max-width: 400px;*/
+            height: 800px;
+            /*overflow: auto;   EDIT TO hidden FOR NO SCROLLBAR */
+            overflow: hidden;  /* EDIT TO hidden FOR NO SCROLLBAR */
+            /*border: #999999 1px solid;*/
+            margin: 0px;
+            padding: 0px;
+        }
+
+    </style>
+
+
+    <div class="vertical-section-container centered">
+        <h3>Basic qrscan-showcase demo</h3>
+        <!--<demo-snippet>-->
+            <!--<template>-->
+                <qrscan-showcase></qrscan-showcase>
+            <!--</template>-->
+        <!--</demo-snippet>-->
+    </div>
+    <iframe name="Framename" src="http://www.bild.de" frameborder="0" scrolling="auto" class="frame-area">
+    </iframe>
+
+
+</html>
