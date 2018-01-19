@@ -1,40 +1,59 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/granite-qrcode-scanner/granite-qrcode-scanner.html">
 
+
 <dom-module id="qrscan-showcase">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]!</h2>
-    <granite-qrcode-scanner data="{{data}}" active="" continuous=""></granite-qrcode-scanner>
-  </template>
-    
-    Daten: {{data}}
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
 
-  <script>
-    /**
-     * `qrscan-showcase`
-     * 
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
-    class QrscanShowcase extends Polymer.Element {
-      static get is() { return 'qrscan-showcase'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'qrscan-showcase'
-          }
-        };
-      }
-    }
+        </style>
+        <h2>Hello [[prop1]]!</h2>
+        <granite-qrcode-scanner data="{{data}}" active="" continuous=""></granite-qrcode-scanner>
+        <button class="btn btn-success" on-click="_fakeChanged">Fake Scan</button>
+        <paper-input daten:="" <a="" href="[[data]]">[[data]]
 
-    window.customElements.define(QrscanShowcase.is, QrscanShowcase);
-  </script>
+    </paper-input></template>   
+
+    <script>
+        /**
+         * `qrscan-showcase`
+         * 
+         *
+         * @customElement
+         * @polymer
+         * @demo demo/index.html
+         */
+        class QrscanShowcase extends Polymer.Element {
+            static get is() {
+                return 'qrscan-showcase';
+            }
+            static get properties() {
+                return {
+                    prop1: {
+                        type: String,
+                        value: 'qrscan-showcase'
+                    },
+                    data: {
+                        type: String,
+                        value: '',
+                        observer: '_dataChanged',
+                    }
+                };
+            }
+
+            _dataChanged(data) {
+                var myframe = document.querySelector('#myframe');
+                myframe.src = data;
+            }
+
+            _fakeChanged() {
+                this.data = 'http://test6.muenchen.de/familienpass';
+            }
+        }
+
+        window.customElements.define(QrscanShowcase.is, QrscanShowcase);
+    </script>
 </dom-module>
