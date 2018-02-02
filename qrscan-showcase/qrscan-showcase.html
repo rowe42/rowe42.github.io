@@ -13,7 +13,7 @@
         <h2>Hier den QR-Code einscannen</h2>
         <granite-qrcode-scanner data="{{data}}" active="" continuous=""></granite-qrcode-scanner>
         <button class="btn btn-success" on-click="_fakeChanged">Fake Scan</button>
-            Link klicken zum Start:  <a href="[[data]]">[[data]]</a>
+<!--            Link klicken zum Start:  <a href="[[data]]">[[data]]</a>-->
     </template>   
 
     <script>
@@ -44,8 +44,9 @@
             }
 
             _dataChanged(data) {
-                var myframe = document.querySelector('#myframe');
-                myframe.src = data;
+//                var myframe = document.querySelector('#myframe');
+//                myframe.src = data;
+                if (data !== '' ) window.location = data;
             }
 
             _fakeChanged() {
